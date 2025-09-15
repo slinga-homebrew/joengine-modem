@@ -125,7 +125,6 @@ int jo_serial_recv_byte(unsigned char* data)
 
     if(SERIAL_REG_SSR & FER)
     {
-    	jo_printf(1, 26, "Resetting FER");
         SERIAL_REG_SSR &= ~FER;
 
         if(g_fer)
@@ -136,7 +135,6 @@ int jo_serial_recv_byte(unsigned char* data)
 
     if(SERIAL_REG_SSR & PER)
     {
-    	jo_printf(1, 27, "Resetting PER");
         SERIAL_REG_SSR &= ~PER;
 
         if(g_per)
